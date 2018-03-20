@@ -17,6 +17,6 @@ import { JokelistComponent } from './jokelist/jokelist.component';
     BrowserModule
   ],
   providers: [],
-  bootstrap: [JokelistComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
