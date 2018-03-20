@@ -1,4 +1,8 @@
 <div class="card card-block">
-  <h4 class="card-title">{{setup}}</h4>
-  <p class="card-text">{{punchline}}</p>
+    <h4 class="card-title">{{data.setup}}</h4>
+    <p class="card-text" [hidden]="data.hide">{{data.punchline}}</p>
+    <a class="btn btn-warning" (click)="data.toggle()">
+      <span [hidden]="!data.hide">Tell Me</span>
+      <span [hidden]="data.hide">Hide</span>
+    </a>
 </div>
