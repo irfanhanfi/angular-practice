@@ -1,12 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewChildren, QueryList, ElementRef,ContentChildren, ContentChild, AfterContentInit, AfterViewInit } from '@angular/core';
 import { Joke } from './../joke';
+import { JokeComponent } from '../joke/joke.component';
 
 @Component({
   selector: 'app-jokelist',
   templateUrl: './jokelist.component.html',
   styleUrls: ['./jokelist.component.css']
 })
-export class JokelistComponent implements OnInit {
+export class JokelistComponent implements OnInit, AfterContentInit, AfterViewInit {
+
+  @ViewChild(JokeComponent) jokeViewChild: JokeComponent;
+  @ViewChildren(JokeComponent) jokeViewChildren: QueryList<JokeComponent>;
+  @ViewChild("header") headerEl: ElementRef;
+  @ContentChild(JokeComponent) jokeContentChild: JokeComponent;
+
   jokes: Object[];
   constructor() {
     this.jokes = [
@@ -20,6 +27,9 @@ export class JokelistComponent implements OnInit {
         "I thought ‘That’s not very mature’")
       ,
     ];
+
+    console.log(`new - jokeViewChild is ${this.jokeViewChild}`);
+    
   }
 
   ngOnInit() {
@@ -31,5 +41,18 @@ export class JokelistComponent implements OnInit {
   
   deleteJoke(joke: Joke){
     this.jokes.splice(this.jokes.indexOf(joke), 1);
+  }
+
+  ngAfterViewInit() {
+    console.log(`ngAfterViewInit - jokeViewChild is`, this.jokeViewChild);
+    let jokes: JokeComponent[] = this.jokeViewChildren.toArray();  
+    console.log(jokes);
+    console.log(`ngAfterViewInit - headerEl is ${this.headerEl}`);
+    //noinspection TypeScriptUnresolvedVariable
+    this.headerEl.nativeElement.textContent = "Best Joke Machine";
+  }
+
+  ngAfterContentInit() { 
+    console.log(`ngAfterContentInit - jokeContentChild is`, this.jokeContentChild);
   }
 }
