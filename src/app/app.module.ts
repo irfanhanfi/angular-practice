@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { JokeComponent } from './joke/joke.component';
 import { JokelistComponent } from './jokelist/jokelist.component';
 import { JokeFormComponent } from './joke-form/joke-form.component';
+import { CarouselComponent } from './carousel/carousel.component';
+import { CarouselItemComponent } from './carousel-item/carousel-item.component';
 
 
 @NgModule({
@@ -13,7 +15,9 @@ import { JokeFormComponent } from './joke-form/joke-form.component';
     AppComponent,
     JokeComponent,
     JokelistComponent,
-    JokeFormComponent
+    JokeFormComponent,
+    CarouselComponent,
+    CarouselItemComponent
   ],
   imports: [
     BrowserModule
