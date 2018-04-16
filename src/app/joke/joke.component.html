@@ -1,10 +1,10 @@
 <div class="card card-block" ccCardHover>
     <h4 class="card-title">{{data.setup}}</h4>
-    <p class="card-text" [hidden]="data.hide">{{data.punchline}}</p>
-    <a class="btn btn-warning" (click)="data.toggle()">
+    <p class="card-text" [style.display]="'none'">{{data.punchline}}</p>
+    <!--[hidden]="data.hide" <a class="btn btn-warning" (click)="data.toggle()">
       <span [hidden]="!data.hide">Tell Me</span>
       <span [hidden]="data.hide">Hide</span>
-    </a>
+    </a> -->
     <button type="button" class="btn btn-danger" (click)="deleteJoke(data)">Delete
     </button>
 </div>
