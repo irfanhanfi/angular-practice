@@ -9,6 +9,7 @@ import { JokeFormComponent } from './joke-form/joke-form.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CarouselItemComponent } from './carousel-item/carousel-item.component';
 import { CardHoverDirective } from './card-hover.directive';
+import { CcRolloverDirective } from './cc-rollover.directive';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { CardHoverDirective } from './card-hover.directive';
     JokeFormComponent,
     CarouselComponent,
     CarouselItemComponent,
-    CardHoverDirective
+    CardHoverDirective,
+    CcRolloverDirective
   ],
   imports: [
     BrowserModule
